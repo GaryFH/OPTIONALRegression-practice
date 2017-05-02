@@ -265,3 +265,16 @@ Summary
 ### The summaries of the lm()function gives a high "Adjusted R-squared" value for y~x1, y~x2, y~x1+x2 and y~x1+x2+x3 (all over 79% - they all also have F-statistic values over 1,100). However y~x3 has a Adjusted R-squared of only 2.3%, a F-statistic of only 12.78 and a "p"value of .000385 (small but significantly larger than the others.)
 
 ### I found no information about the data (no dimensions or variable explanations) - I would like to know more before committing myself. That said - the data appears to show a strong relationship between the "x" variables and "y" - even "x3" though the relationship appears less strong per the lm() function for x3.
+
+### Following gets confidence interval for y~x1 - you can calculate for lm()summary: The 95% confidence interval for the slope is the estimated coefficient (1.38705) ± two standard errors (0.03109) or as using confint:
+
+    c1<-confint(a1,"x1",level = .95)
+    c2<-1.38705+c(-1,1)*(2*0.03109)
+    c1
+
+    ##       2.5 %   97.5 %
+    ## x1 1.325958 1.448135
+
+    c2
+
+    ## [1] 1.32487 1.44923

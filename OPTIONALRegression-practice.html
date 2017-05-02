@@ -394,6 +394,16 @@ summary(a5)</code></pre>
 <div id="i-found-no-information-about-the-data-no-dimensions-or-variable-explanations---i-would-like-to-know-more-before-committing-myself.-that-said---the-data-appears-to-show-a-strong-relationship-between-the-x-variables-and-y---even-x3-though-the-relationship-appears-less-strong-per-the-lm-function-for-x3." class="section level3">
 <h3>I found no information about the data (no dimensions or variable explanations) - I would like to know more before committing myself. That said - the data appears to show a strong relationship between the “x” variables and “y” - even “x3” though the relationship appears less strong per the lm() function for x3.</h3>
 </div>
+<div id="following-gets-confidence-interval-for-yx1---you-can-calculate-for-lmsummary-the-95-confidence-interval-for-the-slope-is-the-estimated-coefficient-1.38705-two-standard-errors-0.03109-or-as-using-confint" class="section level3">
+<h3>Following gets confidence interval for y~x1 - you can calculate for lm()summary: The 95% confidence interval for the slope is the estimated coefficient (1.38705) ± two standard errors (0.03109) or as using confint:</h3>
+<pre class="r"><code>c1&lt;-confint(a1,&quot;x1&quot;,level = .95)
+c2&lt;-1.38705+c(-1,1)*(2*0.03109)
+c1</code></pre>
+<pre><code>##       2.5 %   97.5 %
+## x1 1.325958 1.448135</code></pre>
+<pre class="r"><code>c2</code></pre>
+<pre><code>## [1] 1.32487 1.44923</code></pre>
+</div>
 </div>
 
 
